@@ -36,6 +36,12 @@ Start LocalStack using Docker:
 docker-compose up
 ```
 
+### 3. Compile the functions
+
+```sh
+npm run build
+```
+
 ### 4. Deploy the Application
 
 Deploy all resources and infra to LocalStack:
