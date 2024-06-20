@@ -10,9 +10,10 @@ This project demonstrates a serverless setup using TypeScript and LocalStack for
 
 Before getting started, ensure you have the following tools installed:
 
-- [Node.js](https://nodejs.org/) (version 20.x or higher)
+- Node.js(version 20.x or higher)
+- Docker
+- Docker Compose 
 - [Serverless Framework](https://www.serverless.com/framework/docs/getting-started/)
-- [Docker](https://www.docker.com/get-started)
 - [Serverless-localstack plugin](https://www.serverless.com/plugins/serverless-localstack)
 
 ## Setup
