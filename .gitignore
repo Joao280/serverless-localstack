@@ -3,3 +3,4 @@ localstack
 node_modules
 .vscode
 .serverless
+.DS_Store
