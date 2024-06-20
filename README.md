@@ -35,9 +35,9 @@ Start LocalStack using Docker:
 docker-compose up
 ```
 
-### 4. Deploy the Service
+### 4. Deploy the Application
 
-Deploy the Serverless service to LocalStack:
+Deploy all resources and infra to LocalStack:
 
 ```sh
 serverless deploy --stage local
