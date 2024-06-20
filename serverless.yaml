@@ -1,0 +1,65 @@
+service: serverless-localstack
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  environment:
+    MESSAGES_TABLE: Messages
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: arn:aws:dynamodb:us-east-1:000000000000:table/Messages
+
+
+plugins:
+  - serverless-localstack
+
+custom:
+  localstack:
+    stages:
+      - local
+    host: http://localhost
+    edgePort: 4566
+    lambda:
+      mountCode: true
+
+functions:
+  createMessage:
+    handler: dist/createMessage.handler
+    timeout: 300
+    events:
+      - http:
+          path: messages
+          method: post
+  getMessages:
+    handler: dist/getMessages.handler
+    timeout: 300
+    events:
+      - http:
+          path: messages
+          method: get
+  getFirstMessage:
+    handler: dist/getFirstMessage.handler
+    timeout: 300
+    events:
+      - http:
+          path: firstmessage
+          method: get
+
+resources:
+  Resources:
+    MessagesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: Messages
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5

@@ -1,0 +1,28 @@
+{
+  "name": "serverless-localstack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.138",
+    "@types/node": "^20.12.12",
+    "@types/uuid": "^9.0.8",
+    "aws-lambda": "^1.0.7",
+    "serverless": "^3.38.0",
+    "serverless-localstack": "^1.2.0",
+    "serverless-offline": "^13.6.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1629.0",
+    "uuid": "^9.0.1"
+  }
+}

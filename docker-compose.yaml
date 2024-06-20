@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  localstack:
+    image: localstack/localstack:latest
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=lambda,dynamodb,apigateway,cloudformation,logs,iam
+      - DEBUG=1
+      - DATA_DIR=/var/lib/localstack/data
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
